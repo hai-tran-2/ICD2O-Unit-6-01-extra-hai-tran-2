@@ -7,11 +7,8 @@
 
 "use strict"
 
-/**
- * this function find type of triangle
- */
-
 function calculteQuotientOfTwoNumber() {
+
   // input
   const dividendNumber = parseInt(document.getElementById("dividend-number").value)
   const divisorNumber = parseInt(document.getElementById("divisor-number").value)
@@ -19,18 +16,23 @@ function calculteQuotientOfTwoNumber() {
   let counter = 0
 
   // process
-  remainderOfTwoNumbers = dividendNumber - divisorNumber
-  counter++
-
-  while (true) {
-    if (remainderOfTwoNumbers < divisorNumber) {
-      break
-    } else {
-      remainderOfTwoNumbers = remainderOfTwoNumbers - divisorNumber
-      counter++
-      
+  if (dividendNumber > divisorNumber) {
+    remainderOfTwoNumbers = dividendNumber - divisorNumber
+    counter++
+    document.getElementById("result").innerHTML = dividendNumber + " - " + divisorNumber + " = " + remainderOfTwoNumbers + "<br />"
+    while (true) {
+      if (remainderOfTwoNumbers < divisorNumber) {
+        break
+      } else {
+        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + remainderOfTwoNumbers + " - " + divisorNumber
+        remainderOfTwoNumbers = remainderOfTwoNumbers - divisorNumber
+        counter++
+        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + " = " + remainderOfTwoNumbers + "<br />"
+      }
     }
+    // output
+    document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + "The answer is: " + counter + " R " + remainderOfTwoNumbers
+  } else {
+    document.getElementById("result").innerHTML = "The answer is: " + counter + " R " + dividendNumber
   }
-  // output
-  document.getElementById("result") = "The answer of " + dividendNumber + "/" + divisorNumber + " is: " + counter + " R " + remainderOfTwoNumbers
 }
