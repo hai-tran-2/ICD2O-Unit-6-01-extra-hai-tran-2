@@ -12,26 +12,26 @@ function calculteQuotientOfTwoNumber() {
   // input
   const dividendNumber = parseInt(document.getElementById("dividend-number").value)
   const divisorNumber = parseInt(document.getElementById("divisor-number").value)
-  let remainderOfTwoNumbers = 0
+  let remainderOfNumbers = 0
   let counter = 0
 
   // process
   if (dividendNumber > divisorNumber) {
-    remainderOfTwoNumbers = dividendNumber - divisorNumber
+    remainderOfNumbers = dividendNumber - divisorNumber
     counter++
-    document.getElementById("result").innerHTML = dividendNumber + " - " + divisorNumber + " = " + remainderOfTwoNumbers + "<br />"
+    document.getElementById("result").innerHTML = dividendNumber + " - " + divisorNumber + " = " + remainderOfNumbers + "<br />"
     while (true) {
-      if (remainderOfTwoNumbers < divisorNumber) {
+      if (remainderOfNumbers < divisorNumber) {
         break
       } else {
-        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + remainderOfTwoNumbers + " - " + divisorNumber
-        remainderOfTwoNumbers = remainderOfTwoNumbers - divisorNumber
+        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + remainderOfNumbers + " - " + divisorNumber
+        remainderOfNumbers = remainderOfNumbers - divisorNumber
         counter++
-        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + " = " + remainderOfTwoNumbers + "<br />"
+        document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + " = " + remainderOfNumbers + "<br />"
       }
     }
     // output
-    document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + "The answer is: " + counter + " R " + remainderOfTwoNumbers
+    document.getElementById("result").innerHTML = document.getElementById("result").innerHTML + "The answer is: " + counter + " R " + remainderOfNumbers
   } else {
     document.getElementById("result").innerHTML = "The answer is: " + counter + " R " + dividendNumber
   }
