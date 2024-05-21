@@ -7,6 +7,19 @@
 
 "use strict"
 
+/**
+ * Check servie worker.
+ */
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
+    scope: "/ICS2O-PWA-Test/",
+  })
+}
+
+/**
+ * this function find quotient of two number
+ */
+
 function calculteQuotientOfTwoNumber() {
 
   // input
